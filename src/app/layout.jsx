@@ -1,3 +1,4 @@
+import { DataContextProvider } from '@/store/store'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,15 +12,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + ' flex flex-col h-screen p-4 bg-gray-100'}>
-        <header className='text-center bg-white rounded-lg shadow-md mb-4'>
-          header
-        </header>
-        {children}
-        <footer className='text-center bg-white rounded-lg shadow-md mt-4'>
-          footer
-        </footer>
-      </body>
+      <DataContextProvider>
+        <body className={inter.className + ' flex flex-col h-screen bg-gray-100'}>
+          <header className='text-center text-white bg-slate-800 w-full h-10 mb-4'>
+            header
+          </header>
+          <div className="container flex flex-col justify-center h-full">
+            {children}
+          </div>
+          <footer className='text-center text-white bg-slate-800 w-full h-10 mt-4'>
+            footer
+          </footer>
+        </body>
+      </DataContextProvider>
     </html>
   )
 }
