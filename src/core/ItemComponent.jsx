@@ -23,7 +23,7 @@ const ItemComponent = ({ obj }) => {
         {
           showList &&
           obj?.data.map(el =>
-            <li className='flex items-center justify-between bg-slate-100 rounded p-2 mt-1'>
+            <li key={el.uniqueId} className='flex items-center justify-between bg-slate-100 rounded p-2 mt-1'>
               <span className='text-center rounded-md px-3 text-slate-600'>#{el.uniqueId}</span>
               <p className='text-slate-600'>{DateTime.fromISO(el.created).toFormat('MM-dd-yyyy').toString()}</p>
               <div className='flex items-center w-12 justify-end'>
