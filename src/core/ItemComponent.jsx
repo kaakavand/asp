@@ -1,10 +1,11 @@
+import { useDataContext } from '@/store/store';
 import { DateTime } from 'luxon';
 import React, { useState } from 'react'
 
 const ItemComponent = ({ obj }) => {
   const [showList, setShowList] = useState(false);
+  const { data, setData } = useDataContext();
 
-  console.log();
 
   return (
     <div className=' mb-1'>
@@ -17,7 +18,6 @@ const ItemComponent = ({ obj }) => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
-
       </li>
       <ul>
         {
@@ -27,7 +27,7 @@ const ItemComponent = ({ obj }) => {
               <span className='text-center rounded-md px-3 text-slate-600'>#{el.uniqueId}</span>
               <p className='text-slate-600'>{DateTime.fromISO(el.created).toFormat('MM-dd-yyyy').toString()}</p>
               <div className='flex items-center w-12 justify-end'>
-                <input id="link-checkbox" type="checkbox" className="form-checkbox cursor-pointer rounded duration-200 text-slate-600 focus:ring-slate-600" />
+                <input checked={el.checked} value={el.checked} onChange={({ target }) => setData(data.map(item => (el.uniqueId === item.uniqueId ? ({ ...item, checked: target.checked }) : item)))} id="link-checkbox" type="checkbox" className="form-checkbox cursor-pointer rounded duration-200 text-slate-600 focus:ring-slate-600" />
               </div>
             </li>
           )
