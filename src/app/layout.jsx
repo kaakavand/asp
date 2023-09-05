@@ -16,17 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <DataContextProvider>
-        <body className={inter.className + ' flex flex-col h-screen bg-gray-100'}>
-          <header className='cursor-pointer pt-2 text-center text-white bg-slate-800 w-full h-10 mb-4'>
+        <body className={inter.className + ' flex flex-col justify-start min-h-screen sm:h-screen bg-gray-100'}>
+          <header className='cursor-pointer  text-center text-white flex justify-center items-center bg-slate-800 w-full h-10 mb-2'>
             <div onClick={() => downloadTxt()}>
               Download All Data
             </div>
-
           </header>
-          <div className="container flex flex-col justify-center h-full m-auto">
+          <div className="container flex flex-col grow justify-start sm:justify-center  sm:m-auto h-full sm:h-[calc(100vh_-_6rem)]">
             {children}
           </div>
-          <footer className='text-center text-white bg-slate-800 w-full h-10 mt-4 pb-2 pt-1'>
+          <footer className='text-center text-white bg-slate-800 w-full flex justify-center items-center h-10 mt-2'>
             <Link href={'https://github.com/kaakavand/asp'} target='_blank'>github</Link>
           </footer>
         </body>

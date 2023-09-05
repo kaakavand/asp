@@ -10,8 +10,8 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col gap-4 h-full sm:flex-row">
-      <section className='bg-white rounded-lg shadow-md w-full p-4'>
+    <main className="flex flex-col gap-4 h-full p-2 sm:p-0 sm:flex-row">
+      <section className='bg-white rounded-lg shadow-md w-full p-4 sm:overflow-y-auto'>
         <h2 className='text-slate-600 font-bold p-2 text-center'>
           All Data
         </h2>
@@ -25,7 +25,7 @@ export default function Home() {
           }
         </ul>
       </section>
-      <section className='bg-white rounded-lg shadow-md w-full p-4'>
+      <section className='bg-white rounded-lg shadow-md w-full p-4 sm:overflow-y-auto'>
         <h2 className='text-slate-600 font-bold p-2 text-center'>
           Selected Data
         </h2>
