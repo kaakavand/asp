@@ -17,7 +17,7 @@ export default function Home() {
         </h2>
         <hr />
         <button className='bg-slate-500 transition-all duration-300 hover:bg-slate-700 text-white py-2 my-1 px-4 border border-slate-700 w-full rounded' onClick={() => setData(data.map(el => (!el.selected && el.checked) ? ({ ...el, selected: true, checked: false }) : ({ ...el, checked: false })))}>
-          ADD
+          Add
         </button>
         <ul className=''>
           {
@@ -31,7 +31,7 @@ export default function Home() {
         </h2>
         <hr />
         <button className='bg-slate-500 transition-all duration-300 hover:bg-slate-700 text-white py-2 my-1 px-4 border border-slate-700 w-full rounded' onClick={() => setData(data.map(el => (el.selected && el.checked) ? ({ ...el, selected: false, checked: false }) : ({ ...el, checked: false })))}>
-          Selected Data
+          Delete
         </button>
         <ul className=''>
           {
