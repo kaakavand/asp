@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <header className='text-center text-white bg-slate-800 w-full h-10 mb-4'>
             header
           </header>
-          <div className="container flex flex-col justify-center h-full">
+          <div className="container flex flex-col justify-center h-full m-auto">
             {children}
           </div>
           <footer className='text-center text-white bg-slate-800 w-full h-10 mt-4'>
