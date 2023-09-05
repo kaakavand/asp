@@ -1,6 +1,9 @@
+'use client'
 import { DataContextProvider } from '@/store/store'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { downloadTxt } from '@/functions/downloadTxt'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,14 +17,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <DataContextProvider>
         <body className={inter.className + ' flex flex-col h-screen bg-gray-100'}>
-          <header className='text-center text-white bg-slate-800 w-full h-10 mb-4'>
-            header
+          <header className='cursor-pointer pt-2 text-center text-white bg-slate-800 w-full h-10 mb-4'>
+            <div onClick={() => downloadTxt()}>
+              Download All Data
+            </div>
+
           </header>
           <div className="container flex flex-col justify-center h-full m-auto">
             {children}
           </div>
-          <footer className='text-center text-white bg-slate-800 w-full h-10 mt-4'>
-            footer
+          <footer className='text-center text-white bg-slate-800 w-full h-10 mt-4 pb-2 pt-1'>
+            <Link href={'https://github.com/kaakavand/asp'} target='_blank'>github</Link>
           </footer>
         </body>
       </DataContextProvider>
